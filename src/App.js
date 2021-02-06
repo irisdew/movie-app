@@ -1,37 +1,16 @@
 import React from 'react';
 
 class App extends React.Component{
-  componentDidMount() {
-    console.log("component rendered");
-  }
-  componentDidUpdate() {
-    console.log("I just updated")
-  }
-  componentWillUnmount() {
-    console.log("Goodbye")
-  }
-  constructor(props) {
-    super(props);
-    console.log("hello");
-  }
   state = {
-    count: 0
+    isLoading: true,
+    movies: [] //state를 빈array로 두어도 괜찮다.
   };
-  add = () => {
-    this.setState(current => ({ count: current.count + 1 }));
-  };
-  minus = () => {
-    this.setState({ count: this.state.count - 1 });
-  };
-  render(){
-    console.log("I'm rendering")
-    return (
-      <div>
-        <h1>The number is: {this.state.count}</h1>
-        <button onClick={this.add}>Add</button>
-        <button onClick={this.minus}>Minus</button>
-      </div>
-    );
+  componentDidMount() {
+    setTimeout(() => { this.setState({ isLoading: false, book: true }) }, 10000); //선언하지 않은 state를 추가해도 오류가 나지 않는다.
+  }
+  render() {
+    const {isLoading} = this.state;
+    return <div>{isLoading ? "Loading..." : "We are ready"}</div>;
   }
 }
 
