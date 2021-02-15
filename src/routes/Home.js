@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Movie from "../components/Movie"
-import { API_URL, API_KEY, IMG_URL } from "./Config";
+import { API_URL, API_KEY, IMG_URL } from "../Config";
 import "./Home.css"
 
 class Home extends React.Component {
