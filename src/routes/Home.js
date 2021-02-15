@@ -1,10 +1,10 @@
 import React from "react";
 import axios from "axios";
-import Movie from "./components/Movie"
+import Movie from "../components/Movie"
 import { API_URL, API_KEY, IMG_URL } from "./Config";
-import "./App.css"
+import "./Home.css"
 
-class App extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,4 +35,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Home;
